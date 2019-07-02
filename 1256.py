@@ -1,26 +1,21 @@
 test_cases = int(input())
 
-for a in range(test_cases):
-    hash = []
-    addrs, keys = input().split(' ')
-    addrs, keys = int(addrs), int(keys)
+while test_cases:
 
-    for i in range(addrs):
-        hash.append([])
+    test_cases -= 1
+    addrs, keys = [int(x) for x in input().split()]
+    hash = {str(x) : [] for x in range(addrs)}
+    entry = [int(x) for x in input().split()]
 
-    N = input().split(' ')
-    I = [int(t) for t in N]
 
-    for t in I:
-        p = t % addrs
-        hash[p].append(t)
+    for i in entry:
+        resto = i % addrs
+        hash[str(resto)].append(int(i))
 
-    for p, i in enumerate(hash):
-        print('{} -> '.format(p), end='')
-        for j in i:
-            print('{} -> '.format(j), end='')
+    for i in hash:
+        print('{} -> '.format(i), end = '')
+        for j in hash[i]:
+            print('{} -> '.format(j), end = '')
         print('\\')
-    if a != test_cases - 1:
-        print()
 
-
+    print()
