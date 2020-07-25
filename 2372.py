@@ -1,5 +1,5 @@
 '''
-For exercising proporses i've coded all 
+For exercising purpose i've coded all 
 functions that i needed to solve this problem. 
 '''
 
