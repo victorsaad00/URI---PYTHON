@@ -18,11 +18,9 @@ def is_super(number):
     for i in range(0, len(split_number)):
         if is_prime(split_number[i]):
             count += 1
-    if count >= len(split_number):
-        return True
-    else:
-        return False
-
+            
+    return count >= len(split_number)
+    
 while True:
     try:
         number = int(input())
